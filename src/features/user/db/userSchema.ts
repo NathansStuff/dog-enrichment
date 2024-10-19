@@ -5,6 +5,7 @@ import { User } from '@/features/user/types/User';
 export const userSchema = new Schema<User>(
   {
     name: { type: String, required: true },
+    preferredName: { type: String, required: false },
     email: { type: String, required: true, unique: true },
     imageUrl: { type: String, required: false },
     stripeCustomerId: { type: String, required: false },

@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 export const User = z.object({
   name: z.string(),
+  preferredName: z.string(),
   email: z.string().email(),
   imageUrl: z.string().optional(),
   stripeCustomerId: z.string().optional(), // The Stripe customer ID

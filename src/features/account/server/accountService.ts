@@ -82,6 +82,7 @@ export async function handleUserLoginOrCreate(request: LoginRequest, ipAddress: 
   const newUser = await createUserService(
     {
       name,
+      preferredName: name,
       email,
       isEmailVerified: true,
       oneTimePurchases: [],
