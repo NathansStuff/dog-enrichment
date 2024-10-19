@@ -56,7 +56,7 @@ export async function linkAccountToUser(user: UserWithId, provider: string, prov
 
 // Service to handle user login or account creation
 export async function handleUserLoginOrCreate(request: LoginRequest, ipAddress: string): Promise<UserWithId | null> {
-  const { provider, providerId, name, email } = request;
+  const { provider, providerId, name, email, imageUrl } = request;
   const existingAccount = await getAccountByProviderAndProviderId(provider, providerId);
   console.log('existingAccount', existingAccount);
 
@@ -84,6 +84,7 @@ export async function handleUserLoginOrCreate(request: LoginRequest, ipAddress: 
       name,
       preferredName: name,
       email,
+      imageUrl: imageUrl || undefined,
       isEmailVerified: true,
       oneTimePurchases: [],
     },

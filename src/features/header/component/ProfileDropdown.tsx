@@ -63,7 +63,7 @@ export function ProfileDropdown(): React.JSX.Element {
                   asChild
                   className='block w-full rounded-b-lg px-4 py-2 text-left hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
                 >
-                  <Link href='/profile'>Profile</Link>
+                  <Link href='/settings/profile'>Profile</Link>
                 </Button>
                 <Button
                   variant={'ghost'}

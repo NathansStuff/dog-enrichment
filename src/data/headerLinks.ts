@@ -26,6 +26,6 @@ export const publicHeaderLinks: HeaderLink[] = [
 export const privateHeaderLinks: HeaderLink[] = [
   {
     title: 'Profile',
-    href: '/profile',
+    href: '/settings/profile',
   },
 ];

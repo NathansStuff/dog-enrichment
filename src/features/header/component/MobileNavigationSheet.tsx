@@ -64,7 +64,7 @@ function MobileNavigationSheet(): React.JSX.Element {
                 className='w-full'
                 variant={'secondary'}
               >
-                <Link href='/profile'>Profile</Link>
+                <Link href='/settings/profile'>Profile</Link>
               </Button>
               <Button
                 className='w-full'

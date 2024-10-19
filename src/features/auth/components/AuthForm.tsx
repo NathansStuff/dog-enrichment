@@ -42,7 +42,7 @@ export default function AuthForm({ formType }: AuthFormProps): React.JSX.Element
       const success = await signupUserAction(values);
       if (success) {
         await getSession();
-        router.push('/profile');
+        router.push('/settings/profile');
       }
     } else {
       await signinUserAction(values);

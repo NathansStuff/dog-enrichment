@@ -76,6 +76,7 @@ export const authOptions = {
           id: account.userId.toString(),
           name: user.name,
           email: account.email,
+          image: user.imageUrl, // Change this line
         };
       },
     }),
@@ -104,7 +105,7 @@ export const authOptions = {
         email: user.email,
         provider: account.provider,
         providerId: providerId, // Correctly using the appropriate field
-        imageUrl: user.image || null,
+        imageUrl: user.image || null, // Change this line
       };
 
       try {
