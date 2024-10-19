@@ -1,4 +1,4 @@
-import { IFaq } from '@/features/faq/types/IFaq';
+import { IFaq } from './types/Faq';
 
 export const faqItems: IFaq[] = [
   {

@@ -12,7 +12,7 @@ function PreferencesPage(): React.JSX.Element {
   const [weeklyReminder, setWeeklyReminder] = useState(true);
   const [activitySuggestions, setActivitySuggestions] = useState(true);
 
-  const handleSave = () => {
+  const handleSave = (): void => {
     // Here you would typically save these preferences to your backend
     console.log('Preferences saved:', { emailNotifications, weeklyReminder, activitySuggestions });
   };

@@ -22,6 +22,7 @@ export async function registerUserService(request: SignupFormRequest, ipAddress:
       name: username,
       isEmailVerified: false,
       oneTimePurchases: [],
+      preferredName: username,
     },
     ipAddress
   );
