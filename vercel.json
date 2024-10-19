@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "touch .npmrc && echo $NPM_RC | base64 -d > .npmrc && cat .npmrc && npm install --verbose"
+}
