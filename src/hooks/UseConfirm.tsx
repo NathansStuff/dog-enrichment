@@ -40,6 +40,7 @@ function UseConfirm(title: string, message: string): [() => ReactNode, () => Pro
     return (
       <Dialog open={promise !== null}>
         <DialogContent
+          className='px-4 sm:px-6' // Added padding here
           onInteractOutside={handleCloseButton}
           onEscapeKeyDown={handleCloseButton}
           onClose={handleCloseButton}

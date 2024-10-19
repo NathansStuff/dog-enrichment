@@ -27,15 +27,15 @@ export default function SettingsLayout({ children }: SettingsLayoutProps): React
     <>
       <VerifedOnly />
       <div className='container mx-auto px-4 py-8'>
-        <h1 className='mb-6 text-2xl font-bold'>Settings</h1>
-        <div className='flex flex-col gap-8 md:flex-row'>
-          <nav className='w-full space-y-1 md:w-64'>
+        <div className='flex flex-col justify-center md:flex-row md:gap-8'>
+          <nav className='mb-8 w-full md:mb-0 md:w-64'>
+            <h1 className='mb-6 text-center text-2xl font-bold'>Settings</h1>
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'block rounded-md px-4 py-2 text-sm font-medium',
+                  'my-2 block rounded-md px-4 py-2 text-sm font-medium',
                   pathname === item.href ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted'
                 )}
               >
@@ -43,7 +43,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps): React
               </Link>
             ))}
           </nav>
-          <main className='flex-1'>{children}</main>
+          <main className='w-full max-w-2xl flex-grow'>{children}</main>
         </div>
       </div>
     </>

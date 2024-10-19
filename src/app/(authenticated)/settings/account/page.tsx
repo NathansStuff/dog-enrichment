@@ -1,39 +1,40 @@
 'use client';
 
+import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import UseConfirm from '@/hooks/UseConfirm';
 
-export default function AccountPage() {
+export default function AccountPage(): React.JSX.Element {
+  const [ConfirmDialog, confirm] = UseConfirm('Delete Account', 'Are you sure you want to delete your account?');
+
+  async function handleDeleteAccount(): Promise<void> {
+    const ok = await confirm();
+    if (!ok) {
+      return;
+    }
+  }
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Account</CardTitle>
-      </CardHeader>
-      <CardContent className='space-y-4'>
-        <div className='space-y-2'>
-          <Label htmlFor='email'>Email Address</Label>
-          <Input
-            id='email'
-            type='email'
-            value='user@example.com'
-            readOnly
-          />
-        </div>
-        <div className='space-y-2'>
-          <Label htmlFor='password'>Password</Label>
-          <Input
-            id='password'
-            type='password'
-            value='********'
-            readOnly
-          />
-        </div>
-        <Button>Change Password</Button>
-        <hr className='my-4' />
-        <Button variant='destructive'>Delete Account</Button>
-      </CardContent>
-    </Card>
+    <>
+      <ConfirmDialog />
+      <Card>
+        <CardHeader>
+          <CardTitle>Delete Account</CardTitle>
+        </CardHeader>
+        <CardContent className='space-y-4'>
+          <p className='font-semibold text-red-600'>
+            Warning: Deleting your account is permanent and cannot be undone. All your data will be lost.
+          </p>
+          <Button
+            variant='destructive'
+            onClick={handleDeleteAccount}
+          >
+            Delete Account
+          </Button>
+        </CardContent>
+      </Card>
+    </>
   );
 }
