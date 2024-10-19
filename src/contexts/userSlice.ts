@@ -52,10 +52,13 @@ export const userSlice = createSlice({
     setPreferredName(state, action: PayloadAction<string>) {
       state.preferredName = action.payload;
     },
+    setProfilePicture(state, action: PayloadAction<string>) {
+      state.profilePicture = action.payload;
+    },
   },
 });
 
-export const { setUser, logout, setOneTimePurchases, setName, setPreferredName } = userSlice.actions;
+export const { setUser, logout, setOneTimePurchases, setName, setPreferredName, setProfilePicture } = userSlice.actions;
 
 export const selectUser = (state: RootState): IUserSlice => state.user;
 export const selectIsAuthenticated = (state: RootState): boolean => state.user.isAuthenticated;

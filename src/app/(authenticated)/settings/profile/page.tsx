@@ -8,10 +8,10 @@ import Image from 'next/image';
 
 import LoggedInOnly from '@/components/container/LoggedInOnly';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { selectEmail, selectName, selectProfilePicture } from '@/contexts/userSlice';
 import ProfileForm from '@/features/user/components/ProfileForm';
+import ProfilePictureUpload from '@/features/user/components/ProfilePictureUpload';
 
 import { ProfilePageSkeleton } from './ProfilePageSkeleton';
 
@@ -59,7 +59,7 @@ export default function ProfilePage(): React.JSX.Element {
                 <p className='text-sm text-muted-foreground'>{email}</p>
               </div>
             </div>
-            <Button>Upload Profile Picture</Button>
+            <ProfilePictureUpload />
           </div>
 
           <ProfileForm />

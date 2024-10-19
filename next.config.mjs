@@ -11,7 +11,7 @@ const nextConfig = {
   experimental: {
     typedRoutes: true,
   },
-  images: { domains: ['lh3.googleusercontent.com'] },
+  images: { domains: ['lh3.googleusercontent.com', 'puntaai-scraping.s3.ap-southeast-2.amazonaws.com'] },
 };
 
 export default nextConfig;
