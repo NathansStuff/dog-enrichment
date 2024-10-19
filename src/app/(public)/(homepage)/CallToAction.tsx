@@ -3,13 +3,13 @@
 import { ReactNode } from 'react';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 
 export default function CallToAction(): ReactNode {
   return (
-    <section className='bg-fade py-24 text-secondary-foreground'>
+    <section className='bg-background py-24 text-secondary-foreground'>
       <div className='container mx-auto px-4 text-center'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,13 +22,11 @@ export default function CallToAction(): ReactNode {
             activities every day.
           </p>
           <div className='flex justify-center gap-4'>
-            <Button className='bg-primary text-primary-foreground hover:bg-primary/90'>Get Started Now</Button>
             <Button
-              variant='outline'
-              className='border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground/10'
+              className='bg-primary text-primary-foreground hover:bg-primary/90'
+              asChild
             >
-              Learn More
-              <ArrowRight className='ml-2 h-4 w-4' />
+              <Link href='/signup'>Get Started Now</Link>
             </Button>
           </div>
         </motion.div>

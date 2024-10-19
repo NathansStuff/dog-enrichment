@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Hero(): React.JSX.Element {
   return (
-    <section className='overflow-x-clip bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,hsl(var(--primary)),hsl(var(--background))_100%)] pb-20 pt-8'>
+    <section className='bg-gradient pb-20 pt-8'>
       <div className='container mx-auto px-4'>
         <div className='items-center md:flex md:gap-8'>
           <div className='md:w-[500px]'>

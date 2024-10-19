@@ -36,7 +36,7 @@ export default function FullScreenCalendar(): ReactNode {
   };
 
   return (
-    <section className='bg-background py-12 md:py-16 lg:py-20'>
+    <section id="calender" className='bg-background py-12 md:py-16 lg:py-20'>
       <div className='container mx-auto px-4'>
         <div className='mb-8 flex flex-col items-center justify-between gap-4 sm:flex-row'>
           <h2 className='text-3xl font-bold tracking-tight text-foreground'>Monthly Activities</h2>

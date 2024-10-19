@@ -14,7 +14,7 @@ function Testimonials(): React.JSX.Element {
   const thirdColumn = testimonialData.slice(6, 9);
 
   return (
-    <section className='bg-background pt-5'>
+    <section id='testimonials' className='bg-background pt-5'>
       <PageLayout>
         <div className='section-heading'>
           <div className='flex justify-center'>

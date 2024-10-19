@@ -69,10 +69,10 @@ function Header(): React.JSX.Element {
                     className='btn btn-primary hidden lg:block'
                   >
                     <Link
-                      href={isLoggedIn ? '/' : '/'}
+                      href={isLoggedIn ? '/activities' : '/signup'}
                       passHref
                     >
-                      {isLoggedIn ? 'Create Now' : 'Get Started for free'}
+                      {isLoggedIn ? 'Find Activities' : 'Join Now'}
                     </Link>
                   </Button>
                 </div>

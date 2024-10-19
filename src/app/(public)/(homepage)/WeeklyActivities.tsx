@@ -20,7 +20,7 @@ export default function WeeklyActivities(): ReactNode {
   ];
 
   return (
-    <section className='bg-fade py-12 md:py-16 lg:py-20'>
+    <section id='activities' className='bg-fade py-12 md:py-16 lg:py-20'>
       <div className='container mx-auto px-4'>
         <h2 className='mb-8 text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl '>
           This Week&apos;s Activities

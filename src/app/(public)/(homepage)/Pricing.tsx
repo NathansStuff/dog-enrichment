@@ -4,21 +4,18 @@ import { ReactNode } from 'react';
 
 import { motion } from 'framer-motion';
 import { CheckIcon } from 'lucide-react';
+import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { pricingFeatures } from '@/data/pricingFeatures';
 
 export default function Pricing(): ReactNode {
-  const features = [
-    'Access to 100+ enrichment activities',
-    'Weekly activity planner',
-    'Downloadable PDF guides',
-    'Full-screen monthly calendar',
-    'Community forum access',
-  ];
-
   return (
-    <section className='py-24 bg-fade'>
+    <section
+      id='pricing'
+      className='bg-fade py-24'
+    >
       <div className='container mx-auto px-4'>
         <div className='mb-12 text-center'>
           <h2 className='mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
@@ -44,11 +41,12 @@ export default function Pricing(): ReactNode {
                 <Button
                   className='mb-6 w-full'
                   size='lg'
+                  asChild
                 >
-                  Get Started
+                  <Link href='/signup'>Get Started</Link>
                 </Button>
                 <ul className='space-y-3'>
-                  {features.map((feature, index) => (
+                  {pricingFeatures.map((feature, index) => (
                     <li
                       key={index}
                       className='flex items-center'

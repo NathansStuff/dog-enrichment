@@ -9,7 +9,8 @@ const FullScreenCalendar = lazy(() => import('./FullScreenCalender'));
 const Pricing = lazy(() => import('./Pricing'));
 const Testimonials = lazy(() => import('./Testimonials'));
 const CallToAction = lazy(() => import('./CallToAction'));
-const Footer = lazy(() => import('./Footer'));
+const FAQ = lazy(() => import('@/features/generic/components/FAQ'));
+const Footer = lazy(() => import('@/features/generic/components/Footer'));
 
 export default function HomePage(): React.JSX.Element {
   return (
@@ -20,6 +21,7 @@ export default function HomePage(): React.JSX.Element {
         <FullScreenCalendar />
         <Pricing />
         <Testimonials />
+        <FAQ />
         <CallToAction />
         <Footer />
       </Suspense>
