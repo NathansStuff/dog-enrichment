@@ -12,6 +12,14 @@ export const userSchema = new Schema<User>(
     isEmailVerified: { type: Boolean, required: true, default: false },
     oneTimePurchases: { type: [String], required: true, default: [] },
     receiptUrls: { type: [String], required: true, default: [] },
+    preferences: {
+      type: {
+        emailNotifications: { type: Boolean, required: true, default: true },
+        activityReminders: { type: Boolean, required: true, default: true },
+        personalizedSuggestions: { type: Boolean, required: true, default: true },
+      },
+      required: true,
+    },
   },
   { timestamps: true }
 );

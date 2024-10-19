@@ -13,6 +13,11 @@ export interface IUser {
   isPhoneVerified?: boolean;
   stripeCustomerId?: string;
   oneTimePurchases?: string[];
+  preferences: {
+    emailNotifications: boolean;
+    activityReminders: boolean;
+    personalizedSuggestions: boolean;
+  };
   sid?: string;
   _id: string;
 }
@@ -33,6 +38,11 @@ export const initialUserState: IUserSlice = {
   isPhoneVerified: false,
   sid: '',
   _id: '',
+  preferences: {
+    emailNotifications: true,
+    activityReminders: true,
+    personalizedSuggestions: true,
+  },
 };
 
 export const userSlice = createSlice({
@@ -55,10 +65,21 @@ export const userSlice = createSlice({
     setProfilePicture(state, action: PayloadAction<string>) {
       state.profilePicture = action.payload;
     },
+    setPreferences(
+      state,
+      action: PayloadAction<{
+        emailNotifications: boolean;
+        activityReminders: boolean;
+        personalizedSuggestions: boolean;
+      }>
+    ) {
+      state.preferences = action.payload;
+    },
   },
 });
 
-export const { setUser, logout, setOneTimePurchases, setName, setPreferredName, setProfilePicture } = userSlice.actions;
+export const { setUser, logout, setOneTimePurchases, setName, setPreferredName, setProfilePicture, setPreferences } =
+  userSlice.actions;
 
 export const selectUser = (state: RootState): IUserSlice => state.user;
 export const selectIsAuthenticated = (state: RootState): boolean => state.user.isAuthenticated;
@@ -71,5 +92,14 @@ export const selectIsEmailVerified = (state: RootState): boolean => state.user.i
 export const selectIsPhoneVerified = (state: RootState): boolean => state.user.isPhoneVerified ?? false;
 export const selectSid = (state: RootState): string => state.user.sid ?? '';
 export const selectUserId = (state: RootState): string => state.user._id;
+export const selectPreferences = (
+  state: RootState
+): {
+  emailNotifications: boolean;
+  activityReminders: boolean;
+  personalizedSuggestions: boolean;
+} => {
+  return state.user.preferences;
+};
 
 export const userReducer = userSlice.reducer;

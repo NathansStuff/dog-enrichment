@@ -87,6 +87,11 @@ export async function handleUserLoginOrCreate(request: LoginRequest, ipAddress: 
       imageUrl: imageUrl || undefined,
       isEmailVerified: true,
       oneTimePurchases: [],
+      preferences: {
+        emailNotifications: true,
+        activityReminders: true,
+        personalizedSuggestions: true,
+      },
     },
     ipAddress
   );

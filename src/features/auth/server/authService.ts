@@ -23,6 +23,11 @@ export async function registerUserService(request: SignupFormRequest, ipAddress:
       isEmailVerified: false,
       oneTimePurchases: [],
       preferredName: username,
+      preferences: {
+        emailNotifications: true,
+        activityReminders: true,
+        personalizedSuggestions: true,
+      },
     },
     ipAddress
   );

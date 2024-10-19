@@ -10,6 +10,11 @@ export const User = z.object({
   isEmailVerified: z.boolean().default(false),
   oneTimePurchases: z.array(z.string()).default([]), // IDs of purchased products
   receiptUrls: z.array(z.string()).default([]).optional(),
+  preferences: z.object({
+    emailNotifications: z.boolean().default(true),
+    activityReminders: z.boolean().default(true),
+    personalizedSuggestions: z.boolean().default(true),
+  }),
 });
 
 export const UserPartial = User.partial();

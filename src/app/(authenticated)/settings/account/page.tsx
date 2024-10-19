@@ -2,8 +2,12 @@
 
 import React from 'react';
 
+import { signOut } from 'next-auth/react';
+import { toast } from 'sonner';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { deleteUser } from '@/features/user/api/deleteUser';
 import UseConfirm from '@/hooks/UseConfirm';
 
 export default function AccountPage(): React.JSX.Element {
@@ -14,6 +18,16 @@ export default function AccountPage(): React.JSX.Element {
     if (!ok) {
       return;
     }
+    const loading = toast.loading('Deleting account...');
+    const success = await deleteUser();
+    if (!success) {
+      toast.error('Failed to delete account');
+    }
+    toast.success('Account deleted successfully');
+    toast.dismiss(loading);
+    signOut({
+      callbackUrl: '/',
+    });
   }
 
   return (

@@ -19,7 +19,6 @@ import { getHeaderLinks } from '../utils/getHeaderLinks';
 
 import Banner from './Banner';
 import { ProfileDropdown } from './ProfileDropdown';
-import ThemeButton from './ThemeButton';
 
 function HeaderSkeleton(): React.JSX.Element {
   return <Skeleton className='h-8 w-[90%]' />;
@@ -81,7 +80,6 @@ function Header(): React.JSX.Element {
 
               <div className='hidden items-end gap-4 md:flex'>
                 <div className='flex gap-1'>
-                  <ThemeButton />
                   <ProfileDropdown />
                 </div>
               </div>
