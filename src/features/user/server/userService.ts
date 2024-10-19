@@ -1,11 +1,11 @@
 import { env } from '@/constants';
+import { products } from '@/data/products';
 import { deleteAccountByIdService, getAccountsByUserIdService } from '@/features/account/server/accountService';
 import { purchaseConfirmationEmailTemplate } from '@/features/email/templates/purchaseConfirmationEmailTemplate';
 import { resendEmailVerificationTemplate } from '@/features/email/templates/resendEmailVerificationTemplate';
 import { verifyEmailTemplate } from '@/features/email/templates/verifyEmailTemplate';
 import { Email } from '@/features/email/types/Email';
 import { sendEmail } from '@/features/email/utils/sendEmail';
-import { products } from '@/features/product/products';
 import {
   createUser,
   deleteUserById,

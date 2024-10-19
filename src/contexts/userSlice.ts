@@ -13,6 +13,7 @@ export interface IUser {
   isPhoneVerified?: boolean;
   stripeCustomerId?: string;
   oneTimePurchases?: string[];
+  receiptUrls?: string[];
   preferences: {
     emailNotifications: boolean;
     activityReminders: boolean;
@@ -92,6 +93,8 @@ export const selectIsEmailVerified = (state: RootState): boolean => state.user.i
 export const selectIsPhoneVerified = (state: RootState): boolean => state.user.isPhoneVerified ?? false;
 export const selectSid = (state: RootState): string => state.user.sid ?? '';
 export const selectUserId = (state: RootState): string => state.user._id;
+export const selectOneTimePurchases = (state: RootState): string[] => state.user.oneTimePurchases ?? [];
+export const selectReceiptUrls = (state: RootState): string[] => state.user.receiptUrls ?? [];
 export const selectPreferences = (
   state: RootState
 ): {

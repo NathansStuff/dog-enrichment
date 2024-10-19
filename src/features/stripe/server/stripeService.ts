@@ -1,9 +1,8 @@
 import Stripe from 'stripe';
 
 import { env } from '@/constants';
+import { products } from '@/data/products';
 import { BadRequestError } from '@/exceptions';
-import { products } from '@/features/product/products';
-import { EProductType } from '@/features/product/types/EProductType';
 import { getUserByEmailService, getUserByIdService, updateUserByIdService } from '@/features/user/server/userService';
 import { UserPartial } from '@/features/user/types/User';
 import { stripe } from '@/lib/serverStripe';
@@ -198,7 +197,7 @@ async function handleProductPurchase(userId: string, productId: string, receiptU
     console.log('User or product not found', { userId, productId });
     throw new BadRequestError('User or product not found');
   }
-  const wasOneTimePurchase = product.type === EProductType.ONE_TIME_PURCHASE;
+  const wasOneTimePurchase = true;
   const oneTimePurchases = user.oneTimePurchases || [];
   if (wasOneTimePurchase) {
     oneTimePurchases.push(productId);

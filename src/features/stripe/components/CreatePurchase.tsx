@@ -8,8 +8,7 @@ import Redirect from '@/components/container/Redirect';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAppSelector } from '@/contexts/storeHooks';
 import { selectUser } from '@/contexts/userSlice';
-import { products } from '@/features/product/products';
-import { EProductType } from '@/features/product/types/EProductType';
+import { products } from '@/data/products';
 import { stripePromise } from '@/lib/clientStripe';
 
 import { createPurchase } from '../api/createPurchase';
@@ -25,7 +24,6 @@ const CreatePurchase = ({ productId }: CreatePurchaseProps): React.JSX.Element =
   const [errorMessage, setErrorMessage] = useState(''); // State to manage the error message
   const user = useAppSelector(selectUser);
   const { email, stripeCustomerId } = user;
-  const product = products.find((product) => product.productId === productId);
 
   const selectedProduct = products.find((p) => p.productId === productId);
   const purchasedProducts = user.oneTimePurchases;
@@ -55,7 +53,7 @@ const CreatePurchase = ({ productId }: CreatePurchaseProps): React.JSX.Element =
     fetchClientSecret();
   }, [selectedProduct, email, stripeCustomerId, user._id]);
 
-  if (purchasedProducts?.includes(productId) && product?.type === EProductType.ONE_TIME_PURCHASE) {
+  if (purchasedProducts?.includes(productId)) {
     return (
       <Redirect
         message='You have already purchased this product.'
