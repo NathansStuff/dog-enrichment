@@ -9,7 +9,7 @@ export default function ProductSuccessPage(): React.JSX.Element {
       <CheckStripe />
       <Redirect
         message='Checkout successful!'
-        href='/products'
+        href='/'
       />
     </>
   );

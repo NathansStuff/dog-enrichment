@@ -20,11 +20,7 @@ function ProductButtonText({ product }: Props): React.JSX.Element {
   const alreadyPurchased = oneTimePurchases?.includes(product.productId);
 
   if (alreadyPurchased) {
-    return (
-      <Button asChild>
-        <Link href={`/product/${product.productId.toString()}`}>View Product</Link>
-      </Button>
-    );
+    return <></>;
   }
 
   return (

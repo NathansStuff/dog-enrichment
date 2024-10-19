@@ -8,7 +8,7 @@ import AuthForm from '@/features/auth/components/AuthForm';
 
 function SignInPage(): React.JSX.Element {
   return (
-    <section className='mx-4 overflow-hidden'>
+    <section className='mx-4 overflow-hidden '>
       <LoggedOutOnly />
       <Card className='mx-auto mt-10 max-w-lg text-center'>
         <CardHeader>
