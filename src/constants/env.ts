@@ -24,11 +24,14 @@ export const env = createEnv({
     AWS_SECRET_ACCESS_KEY: z.string(),
     AWS_REGION: z.string(),
     AWS_S3_BUCKET_NAME: z.string(),
+    SANITY_API_TOKEN: z.string(),
   },
   client: {
     NEXT_PUBLIC_ENVIRONMENT: z.nativeEnum(Environment),
     NEXT_PUBLIC_BASE_URL: z.string().url(),
     NEXT_PUBLIC_STRIPE_PUBLIC_KEY: z.string(),
+    NEXT_PUBLIC_SANITY_DATASET: z.string(),
+    NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
   },
   onValidationError: (error: ZodError) => {
     console.error('❌ Invalid environment variables:', error.flatten().fieldErrors);
@@ -40,6 +43,8 @@ export const env = createEnv({
     NEXT_PUBLIC_ENVIRONMENT: process.env.NEXT_PUBLIC_ENVIRONMENT,
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     NEXT_PUBLIC_STRIPE_PUBLIC_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY,
+    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     // Server-side environment variables
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
@@ -55,6 +60,7 @@ export const env = createEnv({
     GMAIL_EMAIL: process.env.GMAIL_EMAIL,
     GMAIL_PASS: process.env.GMAIL_PASS,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
+    SANITY_API_TOKEN: process.env.SANITY_API_TOKEN,
   },
   emptyStringAsUndefined: true,
 });
