@@ -3,6 +3,11 @@
 .env
 .npmrc
 
+sanity/dist
+sanity/node_modules
+sanity/config
+
+
 # dependencies
 /node_modules
 /.pnp
